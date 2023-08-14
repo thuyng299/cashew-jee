@@ -3,19 +3,20 @@ package org.nonit.service.model;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
-@Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Region {
+@NoArgsConstructor
+@Builder
+public class Country {
 
     private Long id;
 
     @NotBlank
-    @Size(min = 3)
     private String name;
 
+    private Long regionId;
+
+    private String regionName;
 }
