@@ -3,7 +3,7 @@
 
     <!-- Logging Properties -->
     <Properties>
-        <Property name="LOG_PATTERN">%-5p | %d{yyyy-MM-dd HH:mm:ss} | %X{mail} | %m%n</Property>
+        <Property name="LOG_PATTERN">%-5p | %d{yyyy-MM-dd HH:mm:ss} | %m%n</Property>
         <Property name="APP_LOG_ROOT">C:/customization/log</Property>
     </Properties>
 

@@ -2,6 +2,7 @@ package org.nonit.cashewmanagement.rest;
 
 import org.nonit.cashewmanagement.service.RegionService;
 import org.nonit.cashewmanagement.service.model.Region;
+import org.nonit.cashewmanagement.utils.exception.InputValidationException;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -10,7 +11,7 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 
 
-@Path("regions")
+@Path("/regions")
 public class RegionResource {
     @Inject
     private RegionService regionService;
@@ -18,7 +19,7 @@ public class RegionResource {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response create(Region region) {
+    public Response create(Region region) throws InputValidationException {
         Region createdRegion = regionService.create(region);
         return Response.created(URI.create("regions/" + createdRegion.getId())).entity(createdRegion).status(Response.Status.CREATED).build();
     }

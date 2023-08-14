@@ -1,5 +1,8 @@
 package org.nonit.cashewmanagement.utils.exception;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.MediaType;
@@ -13,8 +16,16 @@ import java.util.Set;
 @Provider
 public class ConstraintViolationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
 
+    private static final Logger logger = LogManager.getLogger(ConstraintViolationExceptionMapper.class);
     @Override
     public Response toResponse(ConstraintViolationException e) {
+
+        StackTraceElement[] stackTraceArray = e.getStackTrace();
+        String logMessage = String.format("%s:%d - %s",
+                stackTraceArray[0].getClassName(),
+                stackTraceArray[0].getLineNumber(),
+                e.getMessage());
+        logger.info(logMessage);
 
         Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
 

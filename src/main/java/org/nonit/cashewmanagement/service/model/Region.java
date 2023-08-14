@@ -5,6 +5,8 @@ import lombok.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import static org.nonit.cashewmanagement.utils.exception.ErrorMessage.*;
+
 @Builder
 @Getter
 @Setter
@@ -14,8 +16,8 @@ public class Region {
 
     private Long id;
 
-    @NotBlank
-    @Size(min = 3)
+    @NotBlank(message = REGION_NAME_NULL_OR_BLANK)
+    @Size(min = 3, max = 30, message = REGION_NAME_LENGTH_CONSTRAINT)
     private String name;
 
 }
