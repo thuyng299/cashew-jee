@@ -27,6 +27,7 @@
         <junit-platform-surefire-provider-version>1.0.0</junit-platform-surefire-provider-version>
         <validation-api-version>2.0.1.Final</validation-api-version>
         <hibernate-validator-version>6.2.5.Final</hibernate-validator-version>
+        <org-apache-logging-log4j-version>2.20.0</org-apache-logging-log4j-version>
         <fasterxml-jackson-datatype-version>2.15.2</fasterxml-jackson-datatype-version>
         <hibernate-validator-version>6.2.5.Final</hibernate-validator-version>
         <commons-collections4-version>4.1</commons-collections4-version>
@@ -81,6 +82,16 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${org-apache-logging-log4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${org-apache-logging-log4j-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
