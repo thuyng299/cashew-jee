@@ -1,0 +1,17 @@
+package org.nonit.cashewmanagement.mapper;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.nonit.cashewmanagement.entity.WarehouseAreaEntity;
+import org.nonit.cashewmanagement.service.model.WarehouseArea;
+import org.nonit.cashewmanagement.utils.mapper.BaseMapper;
+
+@Mapper(componentModel = "cdi", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+public interface WarehouseAreaMapper extends BaseMapper<WarehouseAreaEntity, WarehouseArea> {
+
+    @Override
+    @Mapping(target = "productId", source = "product.id")
+    @Mapping(target = "productName", source = "product.name")
+    WarehouseArea toDto(WarehouseAreaEntity warehouseArea);
+}

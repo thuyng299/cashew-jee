@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "employee")
 public class EmployeeEntity {
 
     @Id
@@ -66,7 +67,7 @@ public class EmployeeEntity {
     @Column(name = "modified_date")
     private LocalDateTime updatedDate;
 
-//    @ManyToOne
-//    @JoinColumn(name = "area_id")
-//    private WarehouseArea warehouseArea;
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private WarehouseAreaEntity warehouseArea;
 }

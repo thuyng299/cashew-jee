@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "customer")
 public class CustomerEntity {
 
     @Id
@@ -34,4 +35,8 @@ public class CustomerEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusEnum status;
+
+    @ManyToOne
+    @JoinColumn(name = "id", nullable = false)
+    private CountryEntity country;
 }

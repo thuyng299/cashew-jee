@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "supplier")
 public class SupplierEntity {
 
     @Id
@@ -35,4 +36,8 @@ public class SupplierEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusEnum status;
+
+    @ManyToOne
+    @JoinColumn(name = "id", nullable = false)
+    private CountryEntity country;
 }
