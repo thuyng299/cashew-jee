@@ -26,14 +26,14 @@ public class OutgoingDetailEntity {
     private Double discount;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private ProductEntity product;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "goodsDeliveryNote_id", nullable = false)
     private GoodsDeliveryNoteEntity goodsDeliveryNote;
 
     @ManyToOne
-    @JoinColumn(name = "Id", nullable = false)
+    @JoinColumn(name = "incoming_id", nullable = false)
     private IncomingDetailEntity incomingDetail;
 }

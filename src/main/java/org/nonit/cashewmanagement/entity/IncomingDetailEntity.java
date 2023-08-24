@@ -31,14 +31,14 @@ public class IncomingDetailEntity {
     private LocalDateTime expirationDate;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private ProductEntity product;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "warehouseArea_id", nullable = false)
     private WarehouseAreaEntity warehouseArea;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "grn_id", nullable = false)
     private GoodsReceivedNoteEntity goodsReceivedNote;
 }

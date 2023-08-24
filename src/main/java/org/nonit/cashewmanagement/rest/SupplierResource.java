@@ -8,6 +8,5 @@ import javax.ws.rs.Path;
 @Path("/suppliers")
 public class SupplierResource {
 
-    @Inject
-    private SupplierService supplierService;
+
 }

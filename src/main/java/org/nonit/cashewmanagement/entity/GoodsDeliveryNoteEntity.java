@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,13 +29,13 @@ public class GoodsDeliveryNoteEntity {
     private String record;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "employee_id", nullable = false)
     private EmployeeEntity employee;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private CustomerEntity customer;
 
-//    @OneToMany(mappedBy = "goodsDeliveryNote", cascade = CascadeType.PERSIST)
-//    private List<OutgoingDetail> outgoingDetail;
+//    @OneToMany(mappedBy = "goodsDeliveryNote", cascade = CascadeType.ALL)
+//    private List<OutgoingDetailEntity> outgoingDetail;
 }

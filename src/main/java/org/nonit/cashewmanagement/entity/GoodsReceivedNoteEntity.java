@@ -27,11 +27,11 @@ public class GoodsReceivedNoteEntity {
     private String record;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "employee_id", nullable = false)
     private EmployeeEntity employee;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "supplier_id", nullable = false)
     private SupplierEntity supplier;
 
 }

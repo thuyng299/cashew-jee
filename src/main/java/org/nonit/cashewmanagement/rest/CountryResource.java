@@ -8,6 +8,4 @@ import javax.ws.rs.Path;
 @Path("/countries")
 public class CountryResource {
 
-    @Inject
-    private CountryService countryService;
-}
+  }

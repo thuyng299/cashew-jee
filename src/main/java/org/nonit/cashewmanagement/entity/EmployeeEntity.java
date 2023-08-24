@@ -68,6 +68,6 @@ public class EmployeeEntity {
     private LocalDateTime updatedDate;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "area_id")
     private WarehouseAreaEntity warehouseArea;
 }

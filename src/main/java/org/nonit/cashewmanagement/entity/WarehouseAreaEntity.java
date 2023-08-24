@@ -21,6 +21,6 @@ public class WarehouseAreaEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "product_id")
     private ProductEntity product;
 }

@@ -2,6 +2,7 @@ package org.nonit.cashewmanagement.utils.dao;
 
 import lombok.RequiredArgsConstructor;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -17,6 +18,7 @@ import java.util.Optional;
  */
 
 @RequiredArgsConstructor
+@Stateless
 public abstract class BaseDAO<E> {
     @PersistenceContext(name = "cashewmanagement")
     protected EntityManager em;

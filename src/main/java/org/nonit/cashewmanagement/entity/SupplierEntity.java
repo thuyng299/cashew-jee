@@ -38,6 +38,6 @@ public class SupplierEntity {
     private StatusEnum status;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "country_id", nullable = false)
     private CountryEntity country;
 }
