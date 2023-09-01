@@ -8,6 +8,7 @@ import org.nonit.cashewmanagement.mapper.RegionMapper;
 import org.nonit.cashewmanagement.service.model.Region;
 import org.nonit.cashewmanagement.utils.exception.ErrorMessage;
 import org.nonit.cashewmanagement.utils.exception.InputValidationException;
+import org.nonit.cashewmanagement.utils.exception.ResourceNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -39,7 +40,6 @@ public class RegionService {
     }
 
     public Region create(Region region) throws InputValidationException {
-
         verifyRegion(region);
 
         RegionEntity createdRegion = RegionEntity.builder()
@@ -48,11 +48,9 @@ public class RegionService {
         return regionMapper.toDto(regionDAO.create(createdRegion));
     }
 
-    private boolean isExisted(String name) {
-        return regionDAO.findByName(name.trim().toLowerCase()).isPresent();
-    }
-
     private void verifyRegion(Region region) throws InputValidationException {
+        trimRegionName(region);
+
         Set<ConstraintViolation<Region>> violations = validator.validate(region);
         if (CollectionUtils.isNotEmpty(violations)) {
             throw new ConstraintViolationException(violations);
@@ -61,5 +59,22 @@ public class RegionService {
             throw new InputValidationException(ErrorMessage.KEY_REGION_ALREADY_EXISTED,
                     ErrorMessage.REGION_ALREADY_EXISTED);
         }
+    }
+
+    private void trimRegionName(Region region) {
+        if (region.getName() != null) {
+            region.setName(region.getName().trim());
+        }
+    }
+
+    private boolean isExisted(String name) {
+        return regionDAO.findByName(name.trim().toLowerCase()).isPresent();
+    }
+
+    public void delete(Long id) throws ResourceNotFoundException {
+      regionDAO.delete(id);
+//        if (deletedRegion == null){
+//            throw new ResourceNotFoundException(ErrorMessage.KEY_REGION_NOT_FOUND, ErrorMessage.REGION_NOT_FOUND);
+//        }
     }
 }

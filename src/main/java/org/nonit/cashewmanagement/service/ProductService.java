@@ -3,8 +3,9 @@ package org.nonit.cashewmanagement.service;
 import org.nonit.cashewmanagement.dao.ProductDAO;
 import org.nonit.cashewmanagement.mapper.ProductMapper;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
-
+@Stateless
 public class ProductService {
 
     @Inject

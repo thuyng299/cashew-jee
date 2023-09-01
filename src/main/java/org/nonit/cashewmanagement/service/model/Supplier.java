@@ -3,8 +3,11 @@ package org.nonit.cashewmanagement.service.model;
 import lombok.*;
 import org.nonit.cashewmanagement.entity.StatusEnum;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import static org.nonit.cashewmanagement.utils.exception.ErrorMessage.*;
@@ -32,10 +35,12 @@ public class Supplier {
     @NotBlank(message = EMAIL_NULL_OR_BLANK)
     @Email(message = EMAIL_WRONG_FORMAT)
     private String email;
-
+    @Pattern(regexp="(^$|[0-9]{10})" )
     private String phone;
 
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     private Long countryId;
+
 }

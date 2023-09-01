@@ -14,12 +14,19 @@ public class RegionDAO extends BaseDAO<RegionEntity> {
         super(RegionEntity.class);
     }
 
-    public Optional<RegionEntity> findByName(String name){
+    public Optional<RegionEntity> findByName(String name) {
         List<RegionEntity> regionEntityList = em.createQuery("SELECT DISTINCT r FROM RegionEntity r " +
-                "WHERE LOWER(trim(both from r.name)) LIKE LOWER(trim(both from :name))", RegionEntity.class)
+                        "WHERE LOWER(trim(both from r.name)) LIKE LOWER(trim(both from :name))", RegionEntity.class)
                 .setParameter("name", name)
                 .getResultList();
         return regionEntityList.isEmpty() ? Optional.empty() : Optional.of(regionEntityList.get(0));
     }
 
+    public void delete(Long id) {
+        RegionEntity regionEntity = em.find(RegionEntity.class, id);
+
+        if (regionEntity != null){
+            em.remove(regionEntity);
+        }
+    }
 }

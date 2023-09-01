@@ -1,44 +1,44 @@
-package org.nonit.cashewmanagement.entity;
-
-import lombok.*;
-
-import javax.persistence.*;
-import java.time.LocalDateTime;
-
-@Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Table(name = "incoming_detail")
-public class IncomingDetailEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "incoming_amount", nullable = false)
-    private Double amount;
-
-    @Column(name = "product_cost", nullable = false)
-    private Double cost;
-
-    @Column(name = "remaining_amount")
-    private Double remainingAmount;
-
-    @Column(name = "expiration_date", nullable = false)
-    private LocalDateTime expirationDate;
-
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private ProductEntity product;
-
-    @ManyToOne
-    @JoinColumn(name = "warehouseArea_id", nullable = false)
-    private WarehouseAreaEntity warehouseArea;
-
-    @ManyToOne
-    @JoinColumn(name = "grn_id", nullable = false)
-    private GoodsReceivedNoteEntity goodsReceivedNote;
-}
+//package org.nonit.cashewmanagement.entity;
+//
+//import lombok.*;
+//
+//import javax.persistence.*;
+//import java.time.LocalDateTime;
+//
+//@Entity
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Builder
+//@Table(name = "incoming_detail")
+//public class IncomingDetailEntity {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//
+//    @Column(name = "incoming_amount", nullable = false)
+//    private Double amount;
+//
+//    @Column(name = "product_cost", nullable = false)
+//    private Double cost;
+//
+//    @Column(name = "remaining_amount")
+//    private Double remainingAmount;
+//
+//    @Column(name = "expiration_date", nullable = false)
+//    private LocalDateTime expirationDate;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "product_id", nullable = false)
+//    private ProductEntity product;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "warehouseArea_id", nullable = false)
+//    private WarehouseAreaEntity warehouseArea;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "grn_id", nullable = false)
+//    private GoodsReceivedNoteEntity goodsReceivedNote;
+//}

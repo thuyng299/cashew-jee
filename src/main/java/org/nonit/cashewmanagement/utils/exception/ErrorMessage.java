@@ -12,12 +12,17 @@ public class ErrorMessage {
     public static final String KEY_REGION_NAME_LENGTH_CONSTRAINT = "exception.input.validation.region.name.length.invalid";
     public static final String REGION_ALREADY_EXISTED = "Region already existed";
     public static final String KEY_REGION_ALREADY_EXISTED = "exception.input.validation.region.already.existed";
+    public static final String REGION_NOT_FOUND = "Region not found";
+    public static final String KEY_REGION_NOT_FOUND = "exception.resource.region.not.found";
 
     // Country
     public static final String COUNTRY_NAME_NULL_OR_BLANK = "Country Name cannot be null or blank";
     public static final String KEY_COUNTRY_NAME_NULL_OR_BLANK = "exception.input.validation.country.name.null.or.blank";
     public static final String COUNTRY_NAME_LENGTH_CONSTRAINT = "Country Name cannot exceed 255 characters";
     public static final String KEY_COUNTRY_NAME_LENGTH_CONSTRAINT = "exception.input.validation.country.name.length.over.max.length";
+    public static final String COUNTRY_ALREADY_EXISTED = "Country already existed";
+    public static final String KEY_COUNTRY_ALREADY_EXISTED = "exception.input.validation.country.already.existed";
+
 
     // Supplier
     public static final String NAME_NULL_OR_BLANK = "Name cannot be null or blank";

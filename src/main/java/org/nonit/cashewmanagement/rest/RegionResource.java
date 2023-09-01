@@ -3,6 +3,7 @@ package org.nonit.cashewmanagement.rest;
 import org.nonit.cashewmanagement.service.RegionService;
 import org.nonit.cashewmanagement.service.model.Region;
 import org.nonit.cashewmanagement.utils.exception.InputValidationException;
+import org.nonit.cashewmanagement.utils.exception.ResourceNotFoundException;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -28,5 +29,13 @@ public class RegionResource {
     @Produces({MediaType.APPLICATION_JSON})
     public Response getRegionList() {
         return Response.ok(regionService.getRegionList()).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response delete(@PathParam("id") Long id) throws ResourceNotFoundException {
+        regionService.delete(id);
+        return Response.noContent().build();
     }
 }
