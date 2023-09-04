@@ -22,6 +22,8 @@ public class ErrorMessage {
     public static final String KEY_COUNTRY_NAME_LENGTH_CONSTRAINT = "exception.input.validation.country.name.length.over.max.length";
     public static final String COUNTRY_ALREADY_EXISTED = "Country already existed";
     public static final String KEY_COUNTRY_ALREADY_EXISTED = "exception.input.validation.country.already.existed";
+    public static final String COUNTRY_NOT_FOUND = "Country not found";
+    public static final String KEY_COUNTRY_NOT_FOUND = "exception.resource.country.not.found";
 
 
     // Supplier
@@ -37,6 +39,12 @@ public class ErrorMessage {
     public static final String KEY__EMAIL_NULL_OR_BLANK = "exception.input.validation.email.null.or.blank";
     public static final String EMAIL_WRONG_FORMAT = "Email is not the right format";
     public static final String KEY_EMAIL_WRONG_FORMAT = "exception.input.validation.email.wrong.format";
+    public static final String PHONE_WRONG_FORMAT = "Phone must contains digits and dash only";
+    public static final String KEY_PHONE_WRONG_FORMAT = "exception.input.validation.phone.wrong.format";
+    public static final String SUPPLIER_CODE_TAKEN = "Code is taken";
+    public static final String KEY_SUPPLIER_CODE_TAKEN = "exception.input.validation.code.taken";
+    public static final String SUPPLIER_ALREADY_EXISTED = "Supplier already existed";
+    public static final String KEY_SUPPLIER_ALREADY_EXISTED = "exception.input.validation.supplier.already.existed";
 
     private ErrorMessage() {
 
@@ -56,8 +64,10 @@ public class ErrorMessage {
         errorMap.put(NAME_LENGTH_CONSTRAINT, KEY_NAME_LENGTH_CONSTRAINT);
         errorMap.put(CODE_NULL_OR_BLANK, KEY_CODE_NULL_OR_BLANK);
         errorMap.put(CODE_LENGTH_CONSTRAINT, KEY_CODE_LENGTH_CONSTRAINT);
+        errorMap.put(SUPPLIER_CODE_TAKEN, KEY_SUPPLIER_CODE_TAKEN);
         errorMap.put(EMAIL_NULL_OR_BLANK, KEY__EMAIL_NULL_OR_BLANK);
         errorMap.put(EMAIL_WRONG_FORMAT, KEY_EMAIL_WRONG_FORMAT);
+        errorMap.put(PHONE_WRONG_FORMAT, KEY_PHONE_WRONG_FORMAT);
 
         return errorMap;
     }

@@ -1,6 +1,7 @@
 package org.nonit.cashewmanagement.service.model;
 
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.nonit.cashewmanagement.entity.StatusEnum;
 
 import javax.persistence.EnumType;
@@ -28,6 +29,7 @@ public class Supplier {
 
     @NotBlank(message = CODE_NULL_OR_BLANK)
     @Size(max = 10, message = CODE_LENGTH_CONSTRAINT)
+    @UniqueElements(message = SUPPLIER_CODE_TAKEN)
     private String code;
 
     private String address;
@@ -35,7 +37,8 @@ public class Supplier {
     @NotBlank(message = EMAIL_NULL_OR_BLANK)
     @Email(message = EMAIL_WRONG_FORMAT)
     private String email;
-    @Pattern(regexp="(^$|[0-9]{10})" )
+
+    @Pattern(regexp="(^[0-9\\-]+$)", message = PHONE_WRONG_FORMAT)
     private String phone;
 
     @Enumerated(EnumType.STRING)
