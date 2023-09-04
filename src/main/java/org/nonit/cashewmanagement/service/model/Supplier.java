@@ -29,7 +29,6 @@ public class Supplier {
 
     @NotBlank(message = CODE_NULL_OR_BLANK)
     @Size(max = 10, message = CODE_LENGTH_CONSTRAINT)
-    @UniqueElements(message = SUPPLIER_CODE_TAKEN)
     private String code;
 
     private String address;
