@@ -1,7 +1,6 @@
 package org.nonit.cashewmanagement.service.model;
 
 import lombok.*;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.nonit.cashewmanagement.entity.StatusEnum;
 
 import javax.persistence.EnumType;
@@ -12,7 +11,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import static org.nonit.cashewmanagement.utils.exception.ErrorMessage.*;
-
 
 @Getter
 @Setter
