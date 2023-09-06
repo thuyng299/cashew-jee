@@ -11,6 +11,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import static org.nonit.cashewmanagement.utils.exception.ErrorMessage.*;
+import static org.nonit.cashewmanagement.utils.exception.ErrorMessage.SUPPLIER_PHONE_WRONG_FORMAT;
 
 @Getter
 @Setter
@@ -21,21 +22,21 @@ public class Supplier {
 
     private Long id;
 
-    @NotBlank(message = NAME_NULL_OR_BLANK)
-    @Size(max = 255, message = NAME_LENGTH_CONSTRAINT)
+    @NotBlank(message = SUPPLIER_NAME_NULL_OR_BLANK)
+    @Size(max = 255, message = SUPPLIER_NAME_LENGTH_CONSTRAINT)
     private String name;
 
-    @NotBlank(message = CODE_NULL_OR_BLANK)
-    @Size(max = 10, message = CODE_LENGTH_CONSTRAINT)
+    @NotBlank(message = SUPPLIER_CODE_NULL_OR_BLANK)
+    @Size(max = 10, message = SUPPLIER_CODE_LENGTH_CONSTRAINT)
     private String code;
 
     private String address;
 
-    @NotBlank(message = EMAIL_NULL_OR_BLANK)
-    @Email(message = EMAIL_WRONG_FORMAT)
+    @NotBlank(message = SUPPLIER_EMAIL_NULL_OR_BLANK)
+    @Email(message = SUPPLIER_EMAIL_WRONG_FORMAT)
     private String email;
 
-    @Pattern(regexp="(^[0-9\\-]+$)", message = PHONE_WRONG_FORMAT)
+    @Pattern(regexp="(^[0-9\\-]+$)", message = SUPPLIER_PHONE_WRONG_FORMAT)
     private String phone;
 
     @Enumerated(EnumType.STRING)

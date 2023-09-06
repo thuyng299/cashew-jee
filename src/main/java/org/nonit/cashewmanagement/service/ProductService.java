@@ -43,8 +43,8 @@ public class ProductService {
     }
 
     public Product create(Product product) throws ResourceNotFoundException, InputValidationException {
-
         verifyProduct(product);
+
         ProductEntity productEntity = ProductEntity.builder()
                 .name(product.getName().trim())
                 .code(product.getCode().trim())
