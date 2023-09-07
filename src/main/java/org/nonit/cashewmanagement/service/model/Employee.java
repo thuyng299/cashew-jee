@@ -9,6 +9,8 @@ import lombok.*;
 import org.nonit.cashewmanagement.entity.RoleEnum;
 import org.nonit.cashewmanagement.entity.StatusEnum;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -39,6 +41,7 @@ public class Employee {
 
     private String position;
 
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     private String username;

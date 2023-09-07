@@ -17,6 +17,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.util.List;
 import java.util.Set;
 
 @Stateless
@@ -38,6 +39,12 @@ public class WarehouseAreaService {
             .buildValidatorFactory()
             .getValidator();
 
+    public List<WarehouseArea> getAreaList(){
+
+        List<WarehouseAreaEntity> warehouseAreaEntityList = warehouseAreaDAO.findAll();
+
+        return warehouseAreaMapper.toDtoList(warehouseAreaEntityList);
+    }
     public WarehouseArea create(WarehouseArea warehouseArea) throws ResourceNotFoundException, InputValidationException{
 
         verifyArea(warehouseArea);
@@ -46,7 +53,7 @@ public class WarehouseAreaService {
                 .product(productDAO.findById(warehouseArea.getProductId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_PRODUCT_NOT_FOUND, ErrorMessage.PRODUCT_NOT_FOUND)))
                 .build();
 
-        return warehouseAreaMapper.toDto(warehouseAreaEntity);
+        return warehouseAreaMapper.toDto(warehouseAreaDAO.create(warehouseAreaEntity));
     }
 
     private void verifyArea(WarehouseArea warehouseArea) throws InputValidationException{

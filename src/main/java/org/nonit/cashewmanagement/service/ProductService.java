@@ -52,7 +52,7 @@ public class ProductService {
                 .productCategory(product.getProductCategory())
                 .build();
 
-        return productMapper.toDto(productEntity);
+        return productMapper.toDto(productDAO.create(productEntity));
     }
 
     private void verifyProduct(Product product) throws InputValidationException{

@@ -59,7 +59,7 @@ public class CustomerService {
                 .country(countryDAO.findById(customer.getCountryId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_COUNTRY_NOT_FOUND, ErrorMessage.COUNTRY_NOT_FOUND)))
                 .build();
 
-        return customerMapper.toDto(customerEntity);
+        return customerMapper.toDto(customerDAO.create(customerEntity));
     }
 
     private void verifyCustomer(Customer customer) throws InputValidationException{

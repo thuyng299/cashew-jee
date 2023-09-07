@@ -2,7 +2,6 @@ package org.nonit.cashewmanagement.rest;
 
 import org.nonit.cashewmanagement.service.ProductService;
 import org.nonit.cashewmanagement.service.model.Product;
-import org.nonit.cashewmanagement.service.model.Supplier;
 import org.nonit.cashewmanagement.utils.exception.InputValidationException;
 import org.nonit.cashewmanagement.utils.exception.ResourceNotFoundException;
 

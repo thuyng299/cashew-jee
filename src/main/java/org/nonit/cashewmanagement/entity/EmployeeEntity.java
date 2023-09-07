@@ -50,6 +50,7 @@ public class EmployeeEntity {
     private String position;
 
     @Column(name = "employee_status", nullable = false)
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     @Column(unique = true, nullable = false)
