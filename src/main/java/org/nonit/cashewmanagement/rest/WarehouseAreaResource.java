@@ -5,6 +5,7 @@ import org.nonit.cashewmanagement.service.model.WarehouseArea;
 import org.nonit.cashewmanagement.utils.exception.InputValidationException;
 import org.nonit.cashewmanagement.utils.exception.ResourceNotFoundException;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -26,6 +27,7 @@ public class WarehouseAreaResource {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
+    @RolesAllowed({"ROLE_WAREHOUSE_STAFF"})
     public Response create(WarehouseArea warehouseArea) throws InputValidationException, ResourceNotFoundException {
         WarehouseArea createdArea = warehouseAreaService.create(warehouseArea);
         return Response.created(URI.create("areas/" + createdArea.getId())).entity(createdArea).build();

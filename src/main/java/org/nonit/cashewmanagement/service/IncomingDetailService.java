@@ -2,6 +2,7 @@ package org.nonit.cashewmanagement.service;
 
 import org.nonit.cashewmanagement.dao.IncomingDetailDAO;
 import org.nonit.cashewmanagement.mapper.IncomingDetailMapper;
+import org.nonit.cashewmanagement.service.model.CostStat;
 import org.nonit.cashewmanagement.service.model.StockAmountOfCategoryStat;
 
 import javax.ejb.Stateless;
@@ -19,5 +20,9 @@ public class IncomingDetailService {
 
     public List<StockAmountOfCategoryStat> getTotalStockAmountOfFinishedGood(){
         return incomingDetailDAO.getTotalStockAmountOfFinishedGood();
+    }
+
+    public List<CostStat> getTotalCostOfProduct(){
+        return incomingDetailDAO.getTotalCostOfProduct();
     }
 }

@@ -25,7 +25,6 @@ public class ErrorMessage {
     public static final String COUNTRY_NOT_FOUND = "Country not found";
     public static final String KEY_COUNTRY_NOT_FOUND = "exception.resource.country.not.found";
 
-
     // Supplier
     public static final String SUPPLIER_NAME_NULL_OR_BLANK = "Supplier Name cannot be null or blank";
     public static final String KEY_SUPPLIER_NAME_NULL_OR_BLANK = "exception.input.validation.supplier.name.null.or.blank";
@@ -86,6 +85,24 @@ public class ErrorMessage {
     public static final String AREA_NAME_LENGTH_CONSTRAINT = "Area Name must be less than 255 characters";
     public static final String KEY_AREA_NAME_LENGTH_CONSTRAINT = "exception.input.validation.area.name.length.invalid";
 
+    //Employee
+    public static final String EMPLOYEE_EMAIL_NULL_OR_BLANK = "Employee Email cannot be null or blank";
+    public static final String KEY_EMPLOYEE_EMAIL_NULL_OR_BLANK = "exception.input.validation.employee.email.null.or.blank";
+    public static final String EMPLOYEE_EMAIL_WRONG_FORMAT = "Employee Email is not the right format";
+    public static final String KEY_EMPLOYEE_EMAIL_WRONG_FORMAT = "exception.input.validation.employee.email.wrong.format";
+    public static final String PASSWORD_BLANK_OR_NULL = "Password cannot be blank or null";
+    public static final String KEY_PASSWORD_BLANK_OR_NULL = "exception.input.validation.password.blank.or.null";
+    public static final String EMPLOYEE_USERNAME_PASSWORD_INVALID = "Email or Password is wrong.";
+    public static final String KEY_EMPLOYEE_USERNAME_PASSWORD_INVALID = "exception.input.validation.employee.email.password.wrong";
+    public static final String EMPLOYEE_USERNAME_NULL_OR_BLANK = "Employee Username cannot be null or blank";
+    public static final String KEY_EMPLOYEE_USERNAME_NULL_OR_BLANK = "exception.input.validation.employee.email.null.or.blank";
+
+    //Authorization
+    public static final String UNAUTHORIZED_ACCESS = "Unauthorized Access";
+    public static final String KEY_UNAUTHORIZED_ACCESS = "exception.security.unauthorized.access";
+    public static final String FORBIDDEN_ACCESS = "Forbidden Access";
+    public static final String KEY_FORBIDDEN_ACCESS = "exception.security.forbidden.access";
+
     private ErrorMessage() {
 
     }
@@ -126,6 +143,12 @@ public class ErrorMessage {
 
         errorMap.put(AREA_NAME_NULL_OR_BLANK, KEY_AREA_NAME_NULL_OR_BLANK);
         errorMap.put(AREA_NAME_LENGTH_CONSTRAINT, KEY_AREA_NAME_LENGTH_CONSTRAINT);
+
+        errorMap.put(EMPLOYEE_EMAIL_NULL_OR_BLANK, KEY_EMPLOYEE_EMAIL_NULL_OR_BLANK);
+        errorMap.put(EMPLOYEE_EMAIL_WRONG_FORMAT, KEY_EMPLOYEE_EMAIL_WRONG_FORMAT);
+        errorMap.put(PASSWORD_BLANK_OR_NULL, KEY_PASSWORD_BLANK_OR_NULL);
+        errorMap.put(EMPLOYEE_USERNAME_PASSWORD_INVALID, KEY_EMPLOYEE_USERNAME_PASSWORD_INVALID);
+        errorMap.put(EMPLOYEE_USERNAME_NULL_OR_BLANK, KEY_EMPLOYEE_USERNAME_NULL_OR_BLANK);
 
         return errorMap;
     }

@@ -16,9 +16,16 @@ public class IncomingDetailResource {
     private IncomingDetailService incomingDetailService;
 
     @GET
-    @Path("/totalstock-finishedgood")
+    @Path("/total-stock-finished-good")
     @Produces({MediaType.APPLICATION_JSON})
     public Response getTotalStockAmountOfFinishedGood(){
         return Response.ok(incomingDetailService.getTotalStockAmountOfFinishedGood()).build();
+    }
+
+    @GET
+    @Path("/total-product-cost")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getTotalCostOfProduct(){
+        return Response.ok(incomingDetailService.getTotalCostOfProduct()).build();
     }
 }
